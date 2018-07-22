@@ -1,0 +1,1 @@
+[{"sub":"user","origin":"htpasswd","claims":{"role":"user","name":"Us","surname":"ER"}},{"sub":"admin","origin":"htpasswd","claims":{"role":"admin","name":"Ad","surname":"MIN"}}]
