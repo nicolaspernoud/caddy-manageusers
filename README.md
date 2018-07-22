@@ -36,5 +36,6 @@ DELETE http://[hostname:port]/manageusers/[username] HTTP/1.1
 ```
 
 ## NB
+The user-file is not dynamically reloaded when an user is added or deleted on windows systems, it is ok with linux systems.
 The loginsrv (http.login) plugin is supposed to work with a yaml file, but since json is valid yaml, it works flawlessly.
 The user management route must be protected by jwt to disable unwanted users creation (which is a major security flaw).

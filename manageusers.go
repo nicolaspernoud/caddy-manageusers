@@ -136,6 +136,7 @@ func (h PwdHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) (int, erro
 			}
 			if pwdErr == nil && userInfoErr == nil {
 				fmt.Fprintf(w, "User %v added or altered", u.Username)
+				doReload()
 			} else {
 				http.Error(w, fmt.Sprintf("Error adding or altering user %v", u.Username), 400)
 			}
@@ -153,6 +154,7 @@ func (h PwdHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) (int, erro
 			pwdErr := <-errChan
 			if pwdErr == nil && userInfoErr == nil {
 				fmt.Fprintf(w, "User %v deleted", userToDelete)
+				doReload()
 			} else {
 				http.Error(w, fmt.Sprintf("Error deleting user %v", userToDelete), 400)
 			}
